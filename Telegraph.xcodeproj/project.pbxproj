@@ -43,7 +43,7 @@
 		3365AAF227B5639100B7FF73 /* AccountManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerController.swift; sourceTree = "<group>"; };
 		3365AAF427B56FBD00B7FF73 /* AccountManagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerCell.swift; sourceTree = "<group>"; };
 		3372F93227C2F96E0075163F /* Keyсhain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyсhain.swift"; sourceTree = "<group>"; };
-		3372F93827C312B60075163F /* TelegraphLoader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TelegraphLoader.xcdatamodel; sourceTree = "<group>"; };
+		3372F93827C312B60075163F /* Telegraph.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Telegraph.xcdatamodel; sourceTree = "<group>"; };
 		3372F93F27C316EB0075163F /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		33802A5B27B7EB4E005BF5BF /* PageManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManagerController.swift; sourceTree = "<group>"; };
 		338AEA0527B741B8005DC28A /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 			dependencies = (
 			);
 			name = Telegraph;
-			productName = TelegraphLoader;
+			productName = Telegraph;
 			productReference = 335AD5A827A9E974003655D7 /* Telegraph.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -471,9 +471,9 @@
 		3372F93727C312B60075163F /* Telegraph.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3372F93827C312B60075163F /* TelegraphLoader.xcdatamodel */,
+				3372F93827C312B60075163F /* Telegraph.xcdatamodel */,
 			);
-			currentVersion = 3372F93827C312B60075163F /* TelegraphLoader.xcdatamodel */;
+			currentVersion = 3372F93827C312B60075163F /* Telegraph.xcdatamodel */;
 			path = Telegraph.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

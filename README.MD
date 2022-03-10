@@ -3,6 +3,7 @@
 A tool to create, edit and share Telegra.ph pages on iOS. Works via [Telegraph API](https://telegra.ph/api).
 
 ![Preview image](assets/PreviewImage.png)
+
 <a href="https://www.flaticon.com/free-icons/telegraph" title="telegraph icons">Telegraph icons created by Smashicons - Flaticon</a>
 
 ## Differeneces from [Telegram bot](https://t.me/telegraph)
@@ -12,11 +13,7 @@ A tool to create, edit and share Telegra.ph pages on iOS. Works via [Telegraph A
 
 ## Screenshots
 
-![Image 1](assets/Page1.png)
-![Image 2](assets/Page2.png)
-![Image 3](assets/Page3.png)
-![Image 4](assets/Page4.png)
-![Image 5](assets/Page5.png)
+![Screenshots](assets/Screenshots.png)
 
 ## Project dependencies
 

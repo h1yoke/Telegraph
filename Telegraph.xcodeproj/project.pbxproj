@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		334BB0A827B87A0000F486DE /* PageManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334BB0A727B87A0000F486DE /* PageManagerCell.swift */; };
+		335AD5AC27A9E974003655D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335AD5AB27A9E974003655D7 /* AppDelegate.swift */; };
+		335AD5AE27A9E974003655D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335AD5AD27A9E974003655D7 /* SceneDelegate.swift */; };
+		335AD5B027A9E974003655D7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335AD5AF27A9E974003655D7 /* LoginController.swift */; };
+		335AD5B327A9E974003655D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335AD5B127A9E974003655D7 /* Main.storyboard */; };
+		335AD5B527A9E976003655D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335AD5B427A9E976003655D7 /* Assets.xcassets */; };
+		335AD5B827A9E976003655D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335AD5B627A9E976003655D7 /* LaunchScreen.storyboard */; };
+		335AD5C527A9EB68003655D7 /* Telegraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335AD5C427A9EB68003655D7 /* Telegraph.swift */; };
+		335F296627D94233002C8CAF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 335F296527D94233002C8CAF /* .swiftlint.yml */; };
+		3365AAF127B560C600B7FF73 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365AAF027B560C600B7FF73 /* AccountManager.swift */; };
+		3365AAF327B5639100B7FF73 /* AccountManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365AAF227B5639100B7FF73 /* AccountManagerController.swift */; };
+		3365AAF527B56FBD00B7FF73 /* AccountManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365AAF427B56FBD00B7FF73 /* AccountManagerCell.swift */; };
+		3372F93327C2F96E0075163F /* Keyсhain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3372F93227C2F96E0075163F /* Keyсhain.swift */; };
+		3372F93927C312B60075163F /* Telegraph.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3372F93727C312B60075163F /* Telegraph.xcdatamodeld */; };
+		3372F94027C316EB0075163F /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3372F93F27C316EB0075163F /* CoreData.swift */; };
+		33802A5C27B7EB4E005BF5BF /* PageManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33802A5B27B7EB4E005BF5BF /* PageManagerController.swift */; };
+		338AEA0627B741B8005DC28A /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338AEA0527B741B8005DC28A /* AccountInfoController.swift */; };
+		338B28BF27D01D99001757F7 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338B28BE27D01D99001757F7 /* EditorController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		334BB0A727B87A0000F486DE /* PageManagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManagerCell.swift; sourceTree = "<group>"; };
+		335AD5A827A9E974003655D7 /* Telegraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telegraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		335AD5AB27A9E974003655D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		335AD5AD27A9E974003655D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		335AD5AF27A9E974003655D7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		335AD5B227A9E974003655D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		335AD5B427A9E976003655D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		335AD5B727A9E976003655D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		335AD5B927A9E976003655D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		335AD5C427A9EB68003655D7 /* Telegraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telegraph.swift; sourceTree = "<group>"; };
+		335F296527D94233002C8CAF /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		3365AAF027B560C600B7FF73 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		3365AAF227B5639100B7FF73 /* AccountManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerController.swift; sourceTree = "<group>"; };
+		3365AAF427B56FBD00B7FF73 /* AccountManagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerCell.swift; sourceTree = "<group>"; };
+		3372F93227C2F96E0075163F /* Keyсhain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyсhain.swift"; sourceTree = "<group>"; };
+		3372F93827C312B60075163F /* TelegraphLoader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TelegraphLoader.xcdatamodel; sourceTree = "<group>"; };
+		3372F93F27C316EB0075163F /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		33802A5B27B7EB4E005BF5BF /* PageManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManagerController.swift; sourceTree = "<group>"; };
+		338AEA0527B741B8005DC28A /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
+		338B28BE27D01D99001757F7 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
+		33AA4AE627DA142600A87E55 /* README.MD */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		335AD5A527A9E974003655D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		335AD59F27A9E974003655D7 = {
+			isa = PBXGroup;
+			children = (
+				335AD5AA27A9E974003655D7 /* Telegraph */,
+				33AA4AE627DA142600A87E55 /* README.MD */,
+				335F296527D94233002C8CAF /* .swiftlint.yml */,
+				335AD5A927A9E974003655D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		335AD5A927A9E974003655D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				335AD5A827A9E974003655D7 /* Telegraph.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		335AD5AA27A9E974003655D7 /* Telegraph */ = {
+			isa = PBXGroup;
+			children = (
+				335AD5BF27A9E984003655D7 /* Model */,
+				335AD5C027A9E98B003655D7 /* View */,
+				335AD5C127A9E991003655D7 /* Controller */,
+				335AD5AB27A9E974003655D7 /* AppDelegate.swift */,
+				335AD5AD27A9E974003655D7 /* SceneDelegate.swift */,
+				335AD5B127A9E974003655D7 /* Main.storyboard */,
+				335AD5B627A9E976003655D7 /* LaunchScreen.storyboard */,
+				335AD5B427A9E976003655D7 /* Assets.xcassets */,
+				3372F93727C312B60075163F /* Telegraph.xcdatamodeld */,
+				335AD5B927A9E976003655D7 /* Info.plist */,
+			);
+			path = Telegraph;
+			sourceTree = "<group>";
+		};
+		335AD5BF27A9E984003655D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				335AD5C427A9EB68003655D7 /* Telegraph.swift */,
+				3365AAF027B560C600B7FF73 /* AccountManager.swift */,
+				3372F93E27C314510075163F /* Persistence */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		335AD5C027A9E98B003655D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3365AAF427B56FBD00B7FF73 /* AccountManagerCell.swift */,
+				334BB0A727B87A0000F486DE /* PageManagerCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		335AD5C127A9E991003655D7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3365AAF227B5639100B7FF73 /* AccountManagerController.swift */,
+				338AEA0527B741B8005DC28A /* AccountInfoController.swift */,
+				335AD5AF27A9E974003655D7 /* LoginController.swift */,
+				33802A5B27B7EB4E005BF5BF /* PageManagerController.swift */,
+				338B28BE27D01D99001757F7 /* EditorController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3372F93E27C314510075163F /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3372F93227C2F96E0075163F /* Keyсhain.swift */,
+				3372F93F27C316EB0075163F /* CoreData.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		335AD5A727A9E974003655D7 /* Telegraph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 335AD5BC27A9E976003655D7 /* Build configuration list for PBXNativeTarget "Telegraph" */;
+			buildPhases = (
+				335AD5A427A9E974003655D7 /* Sources */,
+				335AD5A527A9E974003655D7 /* Frameworks */,
+				335AD5A627A9E974003655D7 /* Resources */,
+				335F296227D93F8D002C8CAF /* Linter */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Telegraph;
+			productName = TelegraphLoader;
+			productReference = 335AD5A827A9E974003655D7 /* Telegraph.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		335AD5A027A9E974003655D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					335AD5A727A9E974003655D7 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 335AD5A327A9E974003655D7 /* Build configuration list for PBXProject "Telegraph" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 335AD59F27A9E974003655D7;
+			productRefGroup = 335AD5A927A9E974003655D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				335AD5A727A9E974003655D7 /* Telegraph */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		335AD5A627A9E974003655D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				335F296627D94233002C8CAF /* .swiftlint.yml in Resources */,
+				335AD5B827A9E976003655D7 /* LaunchScreen.storyboard in Resources */,
+				335AD5B527A9E976003655D7 /* Assets.xcassets in Resources */,
+				335AD5B327A9E974003655D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		335F296227D93F8D002C8CAF /* Linter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Linter;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		335AD5A427A9E974003655D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33802A5C27B7EB4E005BF5BF /* PageManagerController.swift in Sources */,
+				3365AAF127B560C600B7FF73 /* AccountManager.swift in Sources */,
+				335AD5B027A9E974003655D7 /* LoginController.swift in Sources */,
+				3372F94027C316EB0075163F /* CoreData.swift in Sources */,
+				335AD5AC27A9E974003655D7 /* AppDelegate.swift in Sources */,
+				334BB0A827B87A0000F486DE /* PageManagerCell.swift in Sources */,
+				338AEA0627B741B8005DC28A /* AccountInfoController.swift in Sources */,
+				3365AAF327B5639100B7FF73 /* AccountManagerController.swift in Sources */,
+				3365AAF527B56FBD00B7FF73 /* AccountManagerCell.swift in Sources */,
+				3372F93327C2F96E0075163F /* Keyсhain.swift in Sources */,
+				338B28BF27D01D99001757F7 /* EditorController.swift in Sources */,
+				335AD5C527A9EB68003655D7 /* Telegraph.swift in Sources */,
+				335AD5AE27A9E974003655D7 /* SceneDelegate.swift in Sources */,
+				3372F93927C312B60075163F /* Telegraph.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		335AD5B127A9E974003655D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				335AD5B227A9E974003655D7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		335AD5B627A9E976003655D7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				335AD5B727A9E976003655D7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		335AD5BA27A9E976003655D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		335AD5BB27A9E976003655D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		335AD5BD27A9E976003655D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6HHBUW4D9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Telegraph/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.h1yoke.Telegraph;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		335AD5BE27A9E976003655D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6HHBUW4D9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Telegraph/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.h1yoke.Telegraph;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		335AD5A327A9E974003655D7 /* Build configuration list for PBXProject "Telegraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335AD5BA27A9E976003655D7 /* Debug */,
+				335AD5BB27A9E976003655D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		335AD5BC27A9E976003655D7 /* Build configuration list for PBXNativeTarget "Telegraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335AD5BD27A9E976003655D7 /* Debug */,
+				335AD5BE27A9E976003655D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3372F93727C312B60075163F /* Telegraph.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3372F93827C312B60075163F /* TelegraphLoader.xcdatamodel */,
+			);
+			currentVersion = 3372F93827C312B60075163F /* TelegraphLoader.xcdatamodel */;
+			path = Telegraph.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 335AD5A027A9E974003655D7 /* Project object */;
+}

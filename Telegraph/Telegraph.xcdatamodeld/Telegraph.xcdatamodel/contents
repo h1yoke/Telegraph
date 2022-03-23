@@ -8,6 +8,6 @@
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Account" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Account" positionX="0" positionY="0" width="128" height="104"/>
     </elements>
 </model>

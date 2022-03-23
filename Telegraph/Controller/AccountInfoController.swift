@@ -1,8 +1,10 @@
 import UIKit
+import PhotosUI
+import SwiftUI
 
 /// Account info controller. Holds all aditional info about account.
-class AccountInfoController: UIViewController {
-    /// Account profile image
+class AccountInfoController: UIViewController, PHPickerViewControllerDelegate {
+    /// Account profile button with image
     @IBOutlet weak var accountImage: UIImageView!
     /// Account short name field
     @IBOutlet weak var shortNameField: UITextField!
@@ -14,11 +16,24 @@ class AccountInfoController: UIViewController {
     @IBOutlet weak var tokenField: UITextField!
     /// Controller bar title
     @IBOutlet weak var barTitle: UINavigationItem!
+    /// Image picker controller
+    var imagePicker: PHPickerViewController = {
+        var config = PHPickerConfiguration()
+        config.selectionLimit = 1
+        config.filter = .images
+        return PHPickerViewController(configuration: config)
+    }()
 
     /// Selected account id in `AccountManager.shared`
     var accountId: Int!
     /// Edit flag
     var isEditMode = false
+
+    /// Start image-picker for account profile image.
+    /// - parameter sender: image button
+    @objc func accountButtonPressed(_ gesture: UITapGestureRecognizer) {
+        self.present(imagePicker, animated: true, completion: nil)
+    }
 
     /// Revokes account acess token.
     /// - parameter sender: update button
@@ -28,19 +43,16 @@ class AccountInfoController: UIViewController {
                 "This action will untie all logined devices except this. Continue?",
             preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Revoke", style: .destructive, handler: { _ in
             guard let token = AccountManager.shared.get(by: self.accountId)?.accessToken else { return }
             let method = Telegraph.Method.revokeAccessToken(accessToken: token)
             try? Telegraph.query(method: method, completion: { (response: Telegraph.Response<Telegraph.Account>) in
-                DispatchQueue.main.async {
-                    if let result = response.result {
-                        AccountManager.shared.edit(by: self.accountId, newAccount: result)
-                    }
+                if let result = response.result {
+                    AccountManager.shared.edit(by: self.accountId, newAccount: result)
                 }
             })
         }))
         present(alert, animated: true)
-
     }
 
     /// Copies account token to clipboard.
@@ -65,6 +77,20 @@ class AccountInfoController: UIViewController {
         }
     }
 
+    /// Deletes account.
+    /// - parameter sender: delete button
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        AccountManager.shared.delete(by: accountId)
+
+        if let accountManagerVC = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "AccountManagerControllerID") as? AccountManagerController {
+            accountManagerVC.modalPresentationStyle = .fullScreen
+            present(accountManagerVC, animated: false) {
+                accountManagerVC.accountTableView?.reloadData()
+            }
+        }
+    }
+
     /// Enables all editable fields.
     func enable() {
         shortNameField.isEnabled = true
@@ -80,12 +106,14 @@ class AccountInfoController: UIViewController {
         tokenField.isEnabled = false
     }
 
-    /// Called after the controller's view is loaded into memory.
-    /// Set-ups all text fields by given account.
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    /// Initializes controller.
+    /// - parameter account: telegraph account
+    func commonInit(account: Telegraph.Account) {
+        imagePicker.delegate = self
 
-        guard let account = AccountManager.shared.get(by: accountId) else { return }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(accountButtonPressed(_:)))
+        accountImage.addGestureRecognizer(tap)
+        accountImage.isUserInteractionEnabled = true
 
         barTitle.title = account.shortName ?? "Account" + " Info"
         shortNameField.changeAttributedText(string: account.shortName ?? "")
@@ -93,5 +121,29 @@ class AccountInfoController: UIViewController {
         authorUrlField.changeAttributedText(string: account.authorUrl ?? "")
         tokenField.changeAttributedText(string: account.accessToken ?? "")
         disable()
+    }
+
+    /// Called after the controller's view is loaded into memory.
+    /// Set-ups all text fields by given account.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        guard let account = AccountManager.shared.get(by: accountId) else { return }
+        commonInit(account: account)
+    }
+
+    ///
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true, completion: nil)
+
+        for result in results {
+            result.itemProvider.loadObject(ofClass: UIImage.self, completionHandler: { (object, _) in
+                if let image = object as? UIImage {
+                    DispatchQueue.main.async {
+                        self.accountImage.image = image
+                    }
+                }
+            })
+        }
     }
 }

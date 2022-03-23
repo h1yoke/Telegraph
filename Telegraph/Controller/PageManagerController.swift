@@ -122,27 +122,27 @@ class PageManagerController: UIViewController, UITableViewDelegate, UITableViewD
 
         cell.setCell(by: pages[indexPath.row])
         cell.tapAction = {
-            let presented = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "EditorControllerID") as? EditorController
-            presented?.page = self.pages[indexPath.row]
-            presented?.token = AccountManager.shared.current?.accessToken
-            presented?.modalPresentationStyle = .fullScreen
-            self.present(presented!, animated: true)
+            if let presented = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "EditorControllerID") as? EditorController {
+                presented.page = self.pages[indexPath.row]
+                presented.token = AccountManager.shared.current?.accessToken
+                presented.readonly = false
+                presented.modalPresentationStyle = .fullScreen
+                self.present(presented, animated: true)
+            }
         }
+        /// TODO: Loading portion of pages if quantity exceeds 50.
         return cell
     }
 
     /// Parses Telegraph API response.
     /// - parameter response: PageList if success
     func parseQuery(response: Telegraph.Response<Telegraph.PageList>) {
-        DispatchQueue.main.async {
-            if response.ok, let result = response.result {
-                self.pages = result.pages
-                self.loadingIndicator.isHidden = true
-                self.pageTableView.reloadData()
-            } else if let error = response.error {
-                print(error)
-            }
+        if response.ok, let result = response.result {
+            self.pages = result.pages
+            self.loadingIndicator.isHidden = true
+            self.pageTableView.reloadData()
+        } else if let error = response.error {
         }
     }
 
@@ -160,21 +160,19 @@ class PageManagerController: UIViewController, UITableViewDelegate, UITableViewD
             authorUrl: account.authorUrl, content: [node], returnContent: true)
 
         try? Telegraph.query(method: method, completion: { (response: Telegraph.Response<Telegraph.Page>) in
-                if response.ok, let page = response.result {
-                    DispatchQueue.main.async {
-                        self.pages.append(page)
-                        self.pageTableView.reloadData()
+            if response.ok, let page = response.result {
+                self.pages.append(page)
+                self.pageTableView.reloadData()
 
-                        let presented = UIStoryboard(name: "Main", bundle: nil)
-                            .instantiateViewController(withIdentifier: "EditorControllerID") as? EditorController
-                        presented?.page = page
-                        presented?.token = AccountManager.shared.current?.accessToken
-                        presented?.modalPresentationStyle = .fullScreen
-                        self.present(presented!, animated: true)
-                    }
-                } else {
-                    print(response.error!)
-                }
+                let presented = UIStoryboard(name: "Main", bundle: nil)
+                    .instantiateViewController(withIdentifier: "EditorControllerID") as? EditorController
+                presented?.page = page
+                presented?.token = AccountManager.shared.current?.accessToken
+                presented?.readonly = false
+                presented?.modalPresentationStyle = .fullScreen
+                self.present(presented!, animated: true)
+            } else {
+            }
         })
     }
 }

@@ -29,6 +29,38 @@ enum CoreData {
         }
     }
 
+    /// Deletes account entry.
+    /// - parameter uuid: account internal UUID.
+    /// - returns: operation success.
+    @discardableResult
+    static func delete(uuid: UUID) -> Bool {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return false
+        }
+
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Account")
+
+        guard let accounts = try? managedContext.fetch(fetchRequest) else {
+            return false
+        }
+
+        for account in accounts {
+            if let id = account.value(forKey: "uuid") as? UUID, uuid == id {
+                managedContext.delete(account)
+
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                    return false
+                }
+                return true
+            }
+        }
+        return false
+    }
+
     /// Loades all saved entries.
     /// - returns: UUID, Account pairs.
     static func fetch() -> [(UUID, Telegraph.Account)?] {

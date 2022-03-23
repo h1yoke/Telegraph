@@ -95,9 +95,13 @@ enum Telegraph {
         /// `Encodable` protocol conformance.
         func encode(to encoder: Encoder) throws {
             var container = encoder.singleValueContainer()
-            try object == nil ? container.encode(textNode!) : container.encode(object)
+            try object == nil ? container.encode(textNode!) : container.encode(object!)
         }
 
+        /// Recoursive `flarUnwrap` helper.
+        /// - parameter root: starting node
+        /// - parameter accumulator: starting string
+        /// - returns: flat string.
         private func flatUnwrapRecoursive(root current: Node, accumulator: String) -> String {
             if let textNode = current.textNode {
                 return accumulator + textNode + "\n"
@@ -109,6 +113,8 @@ enum Telegraph {
             return ""
         }
 
+        /// Converts Node to a string without any HTML elements.
+        /// Separate blocks divided by `'\n'`.
         func flatUnwrap() -> String {
             return flatUnwrapRecoursive(root: self, accumulator: "")
         }
@@ -468,6 +474,8 @@ enum Telegraph {
     }
 
     /// Makes an URL query to Telegraph API servers.
+    /// Request is executed on global queue (`userInitiated` priority).
+    /// `completion` closure is executed on main queue.
     /// - parameter method: Telegraph API method that will be queried.
     /// - parameter completion: Clousure that will be executed if response is unwrappable.
     /// - throws: `Telegraph.Error.wrongQuery` if query can not be generated.
@@ -479,7 +487,9 @@ enum Telegraph {
             if let data = try? Data(contentsOf: url),
                let input = String(data: data, encoding: .utf8),
                let response: Response<T> = try? parse(input: input) {
-                completion(response)
+                DispatchQueue.main.async {
+                    completion(response)
+                }
             }
         }
     }

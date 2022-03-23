@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +12,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginController" customModule="TelegraphLoader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginController" customModule="Telegraph" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,6 +57,16 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="T4R-VQ-0wH">
                                 <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F65-5Q-M9t">
+                                <rect key="frame" x="125" y="782" width="164" height="28"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Already have an account?">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tokenButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Snm-88-pn4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -67,6 +76,9 @@
                             <constraint firstItem="jOS-yU-qq4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bfj-Ta-Z4C"/>
                             <constraint firstItem="tyj-UR-wjb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="D8l-RD-qkI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j8U-gP-yAG" secondAttribute="trailing" constant="25" id="FkG-0B-QUp"/>
+                            <constraint firstItem="F65-5Q-M9t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="Iwf-TU-ehd"/>
+                            <constraint firstItem="F65-5Q-M9t" firstAttribute="top" secondItem="A0b-go-CPt" secondAttribute="bottom" constant="20" id="Skn-8d-BOi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F65-5Q-M9t" secondAttribute="trailing" constant="125" id="Uqb-w4-RKP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A0b-go-CPt" secondAttribute="trailing" constant="40" id="WdU-wW-2xN"/>
                             <constraint firstItem="hTF-nH-24O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="atQ-0P-fqa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hTF-nH-24O" secondAttribute="trailing" constant="25" id="dT0-wT-tOM"/>
@@ -95,7 +107,7 @@
         <!--Account Manager Controller-->
         <scene sceneID="iFF-zg-Ycd">
             <objects>
-                <viewController storyboardIdentifier="AccountManagerControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t8b-85-p7d" customClass="AccountManagerController" customModule="TelegraphLoader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountManagerControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t8b-85-p7d" customClass="AccountManagerController" customModule="Telegraph" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="It9-8B-Qvb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="139" width="414" height="757"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AccountManagerCellID" focusStyle="custom" rowHeight="79" id="mEI-pm-htq" customClass="AccountManagerCell" customModule="TelegraphLoader" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AccountManagerCellID" focusStyle="custom" rowHeight="79" id="mEI-pm-htq" customClass="AccountManagerCell" customModule="Telegraph" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mEI-pm-htq" id="OhN-Zc-qr8">
@@ -206,7 +218,7 @@
         <!--Account Info Controller-->
         <scene sceneID="LDc-2q-lcg">
             <objects>
-                <viewController storyboardIdentifier="AccountInfoControllerID" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N1U-gC-E7B" customClass="AccountInfoController" customModule="TelegraphLoader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountInfoControllerID" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N1U-gC-E7B" customClass="AccountInfoController" customModule="Telegraph" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="44N-VR-ovj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,20 +268,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mPB-lR-y54">
-                                <rect key="frame" x="132" y="55.5" width="150" height="147"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="J7I-FH-y5X"/>
-                                    <constraint firstAttribute="height" constant="150" id="hfa-Hl-wEh"/>
-                                </constraints>
-                                <imageReference key="image" image="person.fill" catalog="system" symbolScale="default" renderingMode="hierarchical-single">
-                                    <hierarchicalColors>
-                                        <color white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color name="AccentColor"/>
-                                        <color systemColor="tertiaryLabelColor"/>
-                                    </hierarchicalColors>
-                                </imageReference>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKJ-zB-01t">
                                 <rect key="frame" x="339.5" y="391" width="49.5" height="33"/>
                                 <constraints>
@@ -305,7 +303,17 @@
                                 <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="N1U-gC-E7B" eventType="touchUpInside" id="cNv-9y-w0q"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oID-U2-Mbq">
+                                <rect key="frame" x="132" y="56" width="150" height="147"/>
+                                <color key="tintColor" name="greyColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="rpm-h4-yil"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XSw-ad-fPn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -313,35 +321,36 @@
                             <constraint firstItem="UO4-dD-nIc" firstAttribute="top" secondItem="aoh-Yk-WhU" secondAttribute="bottom" constant="35" id="0tz-I2-SdO"/>
                             <constraint firstItem="XSw-ad-fPn" firstAttribute="trailing" secondItem="7Ki-Gq-eNh" secondAttribute="trailing" constant="25" id="2uc-eP-UJD"/>
                             <constraint firstItem="rbD-9G-cNA" firstAttribute="leading" secondItem="44N-VR-ovj" secondAttribute="leading" id="8ID-Tz-HmO"/>
-                            <constraint firstItem="mPB-lR-y54" firstAttribute="top" secondItem="rbD-9G-cNA" secondAttribute="bottom" constant="10" id="9N6-9R-coy"/>
                             <constraint firstItem="XSw-ad-fPn" firstAttribute="trailing" secondItem="pvJ-NP-TQ7" secondAttribute="trailing" constant="25" id="9rL-0M-96O"/>
                             <constraint firstItem="rbD-9G-cNA" firstAttribute="top" secondItem="44N-VR-ovj" secondAttribute="top" id="Bvn-Fk-nAd"/>
                             <constraint firstItem="os4-h3-wn2" firstAttribute="baseline" secondItem="sKJ-zB-01t" secondAttribute="baseline" id="DyO-uD-wNQ"/>
                             <constraint firstAttribute="trailing" secondItem="rbD-9G-cNA" secondAttribute="trailing" id="HuP-Rm-rwX"/>
+                            <constraint firstItem="oID-U2-Mbq" firstAttribute="centerX" secondItem="rbD-9G-cNA" secondAttribute="centerX" id="IIT-Ot-IpW"/>
                             <constraint firstItem="XSw-ad-fPn" firstAttribute="trailing" secondItem="UO4-dD-nIc" secondAttribute="trailing" constant="25" id="Iyp-Lm-wXF"/>
                             <constraint firstItem="Jmh-fA-DMA" firstAttribute="leading" secondItem="hXJ-hA-SFt" secondAttribute="trailing" constant="10" id="J7a-fK-ups"/>
                             <constraint firstItem="7Ki-Gq-eNh" firstAttribute="top" secondItem="pvJ-NP-TQ7" secondAttribute="bottom" constant="10" id="JXD-JI-S3E"/>
+                            <constraint firstItem="aoh-Yk-WhU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oID-U2-Mbq" secondAttribute="trailing" constant="8" symbolic="YES" id="Nks-qr-mC5"/>
                             <constraint firstItem="XSw-ad-fPn" firstAttribute="trailing" secondItem="sKJ-zB-01t" secondAttribute="trailing" constant="25" id="PCG-BE-HMK"/>
                             <constraint firstItem="hXJ-hA-SFt" firstAttribute="leading" secondItem="XSw-ad-fPn" secondAttribute="leading" constant="25" id="ScM-XI-gcc"/>
                             <constraint firstItem="XSw-ad-fPn" firstAttribute="trailing" secondItem="aoh-Yk-WhU" secondAttribute="trailing" constant="25" id="WaY-FD-Yr6"/>
                             <constraint firstItem="hXJ-hA-SFt" firstAttribute="top" secondItem="Jmh-fA-DMA" secondAttribute="top" id="Zkl-Ie-rj7"/>
+                            <constraint firstItem="UO4-dD-nIc" firstAttribute="top" secondItem="oID-U2-Mbq" secondAttribute="bottom" constant="24.5" id="dDA-sY-7qo"/>
+                            <constraint firstItem="oID-U2-Mbq" firstAttribute="top" secondItem="rbD-9G-cNA" secondAttribute="bottom" constant="10.5" id="dIr-C9-JvW"/>
                             <constraint firstItem="pvJ-NP-TQ7" firstAttribute="top" secondItem="UO4-dD-nIc" secondAttribute="bottom" constant="10" id="drK-mM-3FY"/>
-                            <constraint firstItem="UO4-dD-nIc" firstAttribute="top" secondItem="mPB-lR-y54" secondAttribute="bottom" constant="25" id="h0D-Jv-c4L"/>
+                            <constraint firstItem="oID-U2-Mbq" firstAttribute="leading" secondItem="XSw-ad-fPn" secondAttribute="leading" constant="132" id="ha9-ya-u7w"/>
                             <constraint firstItem="7Ki-Gq-eNh" firstAttribute="leading" secondItem="XSw-ad-fPn" secondAttribute="leading" constant="25" id="hjZ-hh-2vF"/>
                             <constraint firstItem="Jmh-fA-DMA" firstAttribute="top" secondItem="7Ki-Gq-eNh" secondAttribute="bottom" constant="40" id="hpX-3D-pG0"/>
                             <constraint firstItem="sKJ-zB-01t" firstAttribute="top" secondItem="7Ki-Gq-eNh" secondAttribute="bottom" constant="40" id="isA-mt-T4a"/>
-                            <constraint firstItem="aoh-Yk-WhU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mPB-lR-y54" secondAttribute="trailing" constant="8" symbolic="YES" id="jn8-85-A3c"/>
                             <constraint firstItem="sKJ-zB-01t" firstAttribute="leading" secondItem="os4-h3-wn2" secondAttribute="trailing" constant="10" id="odT-82-XIh"/>
                             <constraint firstItem="UO4-dD-nIc" firstAttribute="leading" secondItem="XSw-ad-fPn" secondAttribute="leading" constant="25" id="rbK-af-xMp"/>
                             <constraint firstItem="os4-h3-wn2" firstAttribute="leading" secondItem="Jmh-fA-DMA" secondAttribute="trailing" constant="10" id="sGK-aI-Fjo"/>
                             <constraint firstItem="pvJ-NP-TQ7" firstAttribute="leading" secondItem="XSw-ad-fPn" secondAttribute="leading" constant="25" id="suE-5h-hpk"/>
-                            <constraint firstItem="mPB-lR-y54" firstAttribute="centerX" secondItem="XSw-ad-fPn" secondAttribute="centerX" id="t9W-Ud-cFE"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="accountImage" destination="mPB-lR-y54" id="UIW-eb-BdY"/>
+                        <outlet property="accountImage" destination="oID-U2-Mbq" id="nwN-dL-m1Y"/>
                         <outlet property="authorNameField" destination="pvJ-NP-TQ7" id="6bI-UP-ec3"/>
                         <outlet property="authorUrlField" destination="7Ki-Gq-eNh" id="86D-zO-2u4"/>
                         <outlet property="barTitle" destination="biv-se-moR" id="AlH-na-L2P"/>
@@ -356,7 +365,7 @@
         <!--Page Manager Controller-->
         <scene sceneID="he3-Xo-dJ4">
             <objects>
-                <viewController storyboardIdentifier="PageManagerControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sC0-W2-eRX" customClass="PageManagerController" customModule="TelegraphLoader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageManagerControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sC0-W2-eRX" customClass="PageManagerController" customModule="Telegraph" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ukm-i1-kf5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -365,7 +374,7 @@
                                 <rect key="frame" x="0.0" y="139" width="414" height="757"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PageManagerCellID" focusStyle="custom" rowHeight="79" id="jr9-Tp-GjQ" customClass="PageManagerCell" customModule="TelegraphLoader" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PageManagerCellID" focusStyle="custom" rowHeight="79" id="jr9-Tp-GjQ" customClass="PageManagerCell" customModule="Telegraph" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jr9-Tp-GjQ" id="6tr-IO-aUQ">
@@ -472,7 +481,7 @@
         <!--Editor Controller-->
         <scene sceneID="eej-Bx-swb">
             <objects>
-                <viewController storyboardIdentifier="EditorControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TC9-OU-z6N" customClass="EditorController" customModule="TelegraphLoader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditorControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TC9-OU-z6N" customClass="EditorController" customModule="Telegraph" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mas-74-fbJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -537,6 +546,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.58799999952316284" blue="0.53299999237060547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="greyColor">
+            <color red="0.37599998712539673" green="0.49000000953674316" blue="0.54500001668930054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -545,9 +557,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

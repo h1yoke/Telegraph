@@ -62,6 +62,7 @@ class AccountManager {
         /// Deletes keychain registry.
         func delete() {
             Keychain.delete(key: uuid.uuidString)
+            CoreData.delete(uuid: uuid)
         }
     }
 
@@ -155,7 +156,20 @@ class AccountManager {
         let failure: (String) -> Void = { print($0) }
 
         try? Telegraph.query(method: method, completion: { (response: Telegraph.Response<Telegraph.Account>) in
-                Telegraph.unwrapResponse(response, success: success, failure: failure)
+            Telegraph.unwrapResponse(response, success: success, failure: failure)
         })
+    }
+
+    /// Deletes account entry by id.
+    /// - parameter by id: integer id
+    func delete(by id: Int) {
+        accounts[id].delete()
+
+        var last = id
+        for cur in id + 1..<count {
+            accounts[last] = accounts[cur]
+            last = cur
+        }
+        _ = accounts.popLast()
     }
 }

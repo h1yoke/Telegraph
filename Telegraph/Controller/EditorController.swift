@@ -7,23 +7,20 @@ class EditorController: UIViewController {
 
     /// Account token
     var token: String!
-    /// Editing page
+    /// Shown page
     var page: Telegraph.Page!
+    /// Editing flag
+    var readonly: Bool!
 
-    /// Called after the controller's view is loaded into memory.
-    /// Set-ups page.
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    /// Loades page content.
+    func loadPage() {
         if page.content == nil {
             let method = Telegraph.Method.getPage(path: page.path, returnContent: true)
             try? Telegraph.query(method: method, completion: { (response: Telegraph.Response<Telegraph.Page>) in
-                DispatchQueue.main.async {
-                    if let result = response.result {
-                        self.editorController.text = result.content?.reduce(into: "", { (partialResult: inout String, next: Telegraph.Node) in
-                            partialResult += next.flatUnwrap()
-                        })
-                    }
+                if let result = response.result {
+                    self.editorController.text = result.content?.reduce(into: "", { (partialResult: inout String, next: Telegraph.Node) in
+                        partialResult += next.flatUnwrap()
+                    })
                 }
             })
         } else {
@@ -31,6 +28,41 @@ class EditorController: UIViewController {
                 partialResult += next.flatUnwrap()
             })
         }
+    }
+
+    /// Called after the controller's view is loaded into memory.
+    /// Set-ups page.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        loadPage()
+        if readonly {
+            editorController.isEditable = false
+        } else {
+            let notificationCenter = NotificationCenter.default
+            notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard),
+                                           name: UIResponder.keyboardWillHideNotification, object: nil)
+            notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard),
+                                           name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        }
+    }
+
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            editorController.contentInset = .zero
+        } else {
+            editorController.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+        }
+
+        editorController.scrollIndicatorInsets = editorController.contentInset
+
+        let selectedRange = editorController.selectedRange
+        editorController.scrollRangeToVisible(selectedRange)
     }
 
     /// Prompts if page need to be saved and exits editor.
@@ -44,9 +76,7 @@ class EditorController: UIViewController {
             let method = Telegraph.Method.editPage(accessToken: self.token, path: self.page.path, title: self.page.title, content: self.page.content!)
 
             try? Telegraph.query(method: method, completion: { (_: Telegraph.Response<Telegraph.Page>) in
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true)
-                }
+                self.dismiss(animated: true)
             })
         }),
         UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in }),

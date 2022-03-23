@@ -33,9 +33,22 @@ class LoginController: UIViewController {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard(_:))))
     }
 
-    /// Creates a new Telegraph account.
-    /// - parameter sender: confirm button
-    @IBAction func confirmButtonPressed(_ sender: UIButton) {
+    /// Loads account with token.
+    /// - parameter token: access token
+    func loadAccount(token: String?) {
+        guard let token = token else { return }
+
+        loadingIndicator.isHidden = false
+
+        try? Telegraph.query(method:
+            Telegraph.Method.getAccountInfo(accessToken: token)) { (response: Telegraph.Response<Telegraph.Account>) in
+            self.parseResponse(response, newToken: token)
+            self.loadingIndicator.isHidden = true
+        }
+    }
+
+    /// Creates new account with text fields.
+    func loadAccount() {
         if shortNameField.hasText {
             loadingIndicator.isHidden = false
 
@@ -44,12 +57,33 @@ class LoginController: UIViewController {
                     shortName: shortNameField.attributedText!.string,
                     authorName: authorNameField.attributedText?.string,
                     authorUrl: authorUrlField.attributedText?.string)) { (response: Telegraph.Response<Telegraph.Account>) in
-                DispatchQueue.main.async {
-                    self.parseResponse(response)
-                    self.loadingIndicator.isHidden = true
-                }
+                self.parseResponse(response)
+                self.loadingIndicator.isHidden = true
             }
         }
+    }
+
+    /// Creates a new Telegraph account.
+    /// - parameter sender: confirm button
+    @IBAction func confirmButtonPressed(_ sender: UIButton) {
+        loadAccount()
+    }
+
+    /// Logins via access token.
+    /// - parameter sender: token button
+    @IBAction func tokenButtonPressed(_ sender: UIButton) {
+        let alert = UIAlertController(
+            title: "Login",
+            message: "If you created an account with another services, you can access it via \"access token\". " +
+                     "This is very sensitive information! Copy, type and share this token on your own risk.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { (_: UIAlertAction) in return })
+        alert.addTextField(configurationHandler: { $0.placeholder = "Token" })
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { (_: UIAlertAction) in
+            self.loadAccount(token: alert.textFields?[0].text)
+        })
+        present(alert, animated: true)
     }
 
     /// Dissmisses login controller.
@@ -60,21 +94,23 @@ class LoginController: UIViewController {
 
     /// Parses Telegraph API response
     /// - parameter response: account if success, failure otherwise
-    func parseResponse(_ response: Telegraph.Response<Telegraph.Account>) {
+    func parseResponse(_ response: Telegraph.Response<Telegraph.Account>, newToken: String? = nil) {
         Telegraph.unwrapResponse(response) { (account: Telegraph.Account) in
-                var acc = account
-                if acc.pageCount == nil {
-                    acc.pageCount = 0
-                }
-                AccountManager.shared.add(account: acc)
-                // print(acc.authUrl)
-                self.dismiss(animated: true)
+            var acc = account
+            if acc.pageCount == nil {
+                acc.pageCount = 0
+            }
+            if let token = newToken {
+                acc.accessToken = token
+            }
+            AccountManager.shared.add(account: acc)
+            self.dismiss(animated: true)
         } failure: { (error: String) in
-                clearFields()
+            clearFields()
 
-                let alert = UIAlertController(title: "Account was not created", message: error, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                present(alert, animated: true)
+            let alert = UIAlertController(title: "Account was not created", message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
         }
     }
 

@@ -53,8 +53,8 @@ class AccountManagerController: UIViewController, UITableViewDelegate, UITableVi
     /// Notifies the view controller that its view was added to a view hierarchy.
     /// Reloades table data.
     /// - parameter animated: if transition was animated.
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         accountTableView.reloadData()
     }

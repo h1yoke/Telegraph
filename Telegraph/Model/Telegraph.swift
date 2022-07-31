@@ -104,11 +104,11 @@ enum Telegraph {
         /// - returns: flat string.
         private func flatUnwrapRecoursive(root current: Node, accumulator: String) -> String {
             if let textNode = current.textNode {
-                return accumulator + textNode + "\n"
+                return accumulator + textNode
             } else if let object = current.object {
                 var newAccum = accumulator
                 object.children?.forEach { newAccum += flatUnwrapRecoursive(root: $0, accumulator: accumulator) }
-                return newAccum
+                return "<" + object.tag + ">" + newAccum + "</" + object.tag + ">"
             }
             return ""
         }

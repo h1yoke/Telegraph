@@ -1,13 +1,13 @@
 import UIKit
 
-/// Cell view in Account Manager  table.
-class AccountManagerCell: UITableViewCell {
+/// Cell view in Profile Manager  table.
+class ProfileManagerCell: UITableViewCell {
     /// Left label in cell
-    @IBOutlet weak var accountDetails: UILabel!
-    /// Right lavel in cell
-    @IBOutlet weak var accountTitle: UILabel!
-    /// Cell account id in `AccountManager.shared`
-    var accountId: Int!
+    @IBOutlet weak var profileDetails: UILabel!
+    /// Right label in cell
+    @IBOutlet weak var profileTitle: UILabel!
+    /// Cell profile id in `ProfileManager.shared`
+    var profileId: Int!
 
     /// Closures for press and tab actions
     var pressAction: () -> Void = {}
@@ -41,20 +41,19 @@ class AccountManagerCell: UITableViewCell {
     /// - parameter gesture: tap gesture.
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
         if gesture.state == .ended {
-            AccountManager.shared.select(by: accountId)
+            ProfileManager.shared.select(id: profileId)
             tapAction()
         }
     }
 
-    /// Set-ups cell by account id in `AccountManager.shared`
-    /// - parameter id: account id.
+    /// Set-ups cell by profile id in `ProfileManager.shared`
+    /// - parameter id: profile id.
     func setCell(by id: Int) {
-        self.accountId = id
-        let account = AccountManager.shared.get(by: id)
+        self.profileId = id
 
-        self.accountTitle.text = account?.shortName
-        self.accountTitle.textColor = UIColor(named: "AccentColor")
+        self.profileTitle.text = ProfileManager.shared.get(id: id).shortName
+        self.profileTitle.textColor = UIColor(named: "AccentColor")
 
-        self.accountDetails.text = ""
+        self.profileDetails.text = ""
     }
 }

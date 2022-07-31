@@ -19,3 +19,12 @@ A tool to create, edit and share Telegra.ph pages on iOS. Works via [Telegraph A
 
 - [SwiftLint](https://github.com/realm/SwiftLint)
 - Telegraph API (requiers internet connection to load and submit pages)
+
+## Code details
+
+- MVC architecture
+- KeyChain
+- Core Data
+- DispatchQueue
+
+- Single-tone

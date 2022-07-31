@@ -15,7 +15,7 @@ extension UITextField {
     }
 }
 
-/// Login controller. Creates a new account with given parameters.
+/// Login controller. Creates a new profile with given parameters.
 class LoginController: UIViewController {
     /// Account short name
     @IBOutlet weak var shortNameField: UITextField!
@@ -33,7 +33,7 @@ class LoginController: UIViewController {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard(_:))))
     }
 
-    /// Loads account with token.
+    /// Loads profile with Telegraph account token.
     /// - parameter token: access token
     func loadAccount(token: String?) {
         guard let token = token else { return }
@@ -47,7 +47,7 @@ class LoginController: UIViewController {
         }
     }
 
-    /// Creates new account with text fields.
+    /// Creates new profile with text fields.
     func loadAccount() {
         if shortNameField.hasText {
             loadingIndicator.isHidden = false
@@ -63,7 +63,7 @@ class LoginController: UIViewController {
         }
     }
 
-    /// Creates a new Telegraph account.
+    /// Creates a new profile.
     /// - parameter sender: confirm button
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
         loadAccount()
@@ -103,7 +103,9 @@ class LoginController: UIViewController {
             if let token = newToken {
                 acc.accessToken = token
             }
-            AccountManager.shared.add(account: acc)
+            if let profile = Profile(newAccount: acc) {
+                ProfileManager.shared.add(profile: profile)
+            }
             self.dismiss(animated: true)
         } failure: { (error: String) in
             clearFields()

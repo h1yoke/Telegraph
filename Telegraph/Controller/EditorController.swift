@@ -9,8 +9,6 @@ class EditorController: UIViewController {
     var token: String!
     /// Shown page
     var page: Telegraph.Page!
-    /// Editing flag
-    var readonly: Bool!
 
     /// Loades page content.
     func loadPage() {
@@ -36,7 +34,7 @@ class EditorController: UIViewController {
         super.viewDidLoad()
 
         loadPage()
-        if readonly {
+        if !(page.canEdit ?? false) {
             editorController.isEditable = false
         } else {
             let notificationCenter = NotificationCenter.default

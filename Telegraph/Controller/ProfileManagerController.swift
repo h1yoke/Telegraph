@@ -17,16 +17,16 @@ extension UIViewController {
     }
 }
 
-/// Account manager controller. Contains table with all loaded
-/// accounts and buttons for switching to other controllers.
-class AccountManagerController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    /// Table with all appliaction accounts
-    @IBOutlet weak var accountTableView: UITableView!
-    /// Search tool for account filtering
+/// Profile manager controller. Contains table with all loaded
+/// profiles and buttons for switching to other controllers.
+class ProfileManagerController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    /// Table with all appliaction profiels
+    @IBOutlet weak var profileTableView: UITableView!
+    /// Search tool for profile filtering
     @IBOutlet weak var searchBar: UISearchBar!
     /// Loading indicator for all Telegraph API interactions
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    /// New Account button
+    /// New profile button
     @IBOutlet weak var addButton: UIButton!
 
     /// Switches controller to `Login Controller`
@@ -36,12 +36,12 @@ class AccountManagerController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     /// Called after the controller's view is loaded into memory.
-    /// Set-ups Account Table and all buttons.
+    /// Set-ups profile table and all buttons.
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        accountTableView.delegate = self
-        accountTableView.dataSource = self
+        profileTableView.delegate = self
+        profileTableView.dataSource = self
 
         let size = min(min(view.frame.width, view.frame.height) / 4.0, 75)
         addButton.frame = CGRect(x: view.frame.width - size - 15, y: view.frame.height - size - 25, width: size, height: size)
@@ -56,7 +56,7 @@ class AccountManagerController: UIViewController, UITableViewDelegate, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        accountTableView.reloadData()
+        profileTableView.reloadData()
     }
 
     /// Disables keyboard after tap action.
@@ -66,26 +66,26 @@ class AccountManagerController: UIViewController, UITableViewDelegate, UITableVi
 
     /// Table view number of rows function.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AccountManager.shared.count
+        return ProfileManager.shared.count
     }
 
     /// Table view cell by row function.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagerCellID", for: indexPath) as? AccountManagerCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileManagerCellID", for: indexPath) as? ProfileManagerCell else {
             return UITableViewCell()
         }
 
         cell.setCell(by: indexPath.row)
         cell.pressAction = { [unowned self] in
             guard let infoVC = UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: "AccountInfoControllerID") as? AccountInfoController else {
+                    .instantiateViewController(withIdentifier: "ProfileInfoControllerID") as? ProfileInfoController else {
                 return
             }
             if UIDevice.current.userInterfaceIdiom != .pad {
                 infoVC.modalPresentationStyle = .popover
             }
             infoVC.modalTransitionStyle = .coverVertical
-            infoVC.accountId = indexPath.row
+            infoVC.profileId = indexPath.row
             self.present(infoVC, animated: true)
         }
         cell.tapAction = { [unowned self] in

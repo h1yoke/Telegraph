@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="76.811594202898561" y="66.964285714285708"/>
         </scene>
-        <!--Account Manager Controller-->
+        <!--Profile Manager Controller-->
         <scene sceneID="iFF-zg-Ycd">
             <objects>
-                <viewController storyboardIdentifier="AccountManagerControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t8b-85-p7d" customClass="AccountManagerController" customModule="Telegraph" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileManagerControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t8b-85-p7d" customClass="ProfileManagerController" customModule="Telegraph" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="It9-8B-Qvb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="139" width="414" height="757"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AccountManagerCellID" focusStyle="custom" rowHeight="79" id="mEI-pm-htq" customClass="AccountManagerCell" customModule="Telegraph" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProfileManagerCellID" focusStyle="custom" rowHeight="79" id="mEI-pm-htq" customClass="ProfileManagerCell" customModule="Telegraph" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mEI-pm-htq" id="OhN-Zc-qr8">
@@ -129,8 +129,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqB-zU-p18">
-                                                    <rect key="frame" x="35" y="26" width="73" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqB-zU-p18">
+                                                    <rect key="frame" x="35" y="26" width="55.5" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -148,8 +148,8 @@
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outlet property="accountDetails" destination="vyI-Vk-xKI" id="lpi-Lh-rUL"/>
-                                            <outlet property="accountTitle" destination="fqB-zU-p18" id="ZcE-zd-iUo"/>
+                                            <outlet property="profileDetails" destination="vyI-Vk-xKI" id="lpi-Lh-rUL"/>
+                                            <outlet property="profileTitle" destination="fqB-zU-p18" id="ZcE-zd-iUo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -157,14 +157,14 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPg-bp-V8l">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Accounts" id="pUm-ih-g76">
+                                    <navigationItem title="Profiles" id="pUm-ih-g76">
                                         <barButtonItem key="rightBarButtonItem" image="gearshape" catalog="system" id="L60-3D-wSu">
                                             <color key="tintColor" systemColor="linkColor"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" text="" placeholder="Account short name" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1n-yy-Mmv">
+                            <searchBar contentMode="redraw" text="" placeholder="Profile short name" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1n-yy-Mmv">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="search" smartDashesType="no" textContentType="name"/>
                                 <scopeButtonTitles>
@@ -205,7 +205,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="accountTableView" destination="mvm-eG-FxT" id="4M9-tX-tcO"/>
+                        <outlet property="profileTableView" destination="mvm-eG-FxT" id="4M9-tX-tcO"/>
                         <outlet property="addButton" destination="wWl-9p-120" id="YEm-ka-1Rp"/>
                         <outlet property="loadingIndicator" destination="kN4-cY-T2L" id="NEY-Fo-Vvs"/>
                         <outlet property="searchBar" destination="w1n-yy-Mmv" id="Dyx-xb-sh0"/>
@@ -215,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="77" y="851"/>
         </scene>
-        <!--Account Info Controller-->
+        <!--Profile Info Controller-->
         <scene sceneID="LDc-2q-lcg">
             <objects>
-                <viewController storyboardIdentifier="AccountInfoControllerID" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N1U-gC-E7B" customClass="AccountInfoController" customModule="Telegraph" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileInfoControllerID" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N1U-gC-E7B" customClass="ProfileInfoController" customModule="Telegraph" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="44N-VR-ovj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,7 +226,7 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbD-9G-cNA">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Account Info" id="biv-se-moR">
+                                    <navigationItem title="Profile Info" id="biv-se-moR">
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zzA-Zj-ddl">
                                             <color key="tintColor" systemColor="linkColor"/>
                                             <connections>
@@ -350,7 +350,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="accountImage" destination="oID-U2-Mbq" id="nwN-dL-m1Y"/>
+                        <outlet property="profileImage" destination="oID-U2-Mbq" id="nwN-dL-m1Y"/>
                         <outlet property="authorNameField" destination="pvJ-NP-TQ7" id="6bI-UP-ec3"/>
                         <outlet property="authorUrlField" destination="7Ki-Gq-eNh" id="86D-zO-2u4"/>
                         <outlet property="barTitle" destination="biv-se-moR" id="AlH-na-L2P"/>
@@ -505,10 +505,9 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hDz-3Z-15C">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDz-3Z-15C">
                                 <rect key="frame" x="0.0" y="113" width="414" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -549,9 +548,6 @@
         <namedColor name="greyColor">
             <color red="0.37599998712539673" green="0.49000000953674316" blue="0.54500001668930054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

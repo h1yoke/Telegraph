@@ -14,7 +14,7 @@ extension UIViewController {
     }
 }
 
-/// Page manager controller. Contains table with all account pages and buttons.
+/// Page manager controller. Contains table with all profile pages and buttons.
 class PageManagerController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     /// Page table
     @IBOutlet weak var pageTableView: UITableView!
@@ -81,12 +81,12 @@ class PageManagerController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     /// Notifies the view controller that its view was added to a view hierarchy.
-    /// Checks if account is valid to load pages.
+    /// Checks if profile is valid to load pages.
     /// - parameter animated: if transition was animated.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        guard let token = AccountManager.shared.current?.accessToken else {
+        guard let token = ProfileManager.shared.current?.accessToken else {
             presentAlert(
                 title: "Warning",
                 message: "Account info corrupted. No access token found.",
@@ -125,8 +125,8 @@ class PageManagerController: UIViewController, UITableViewDelegate, UITableViewD
             if let presented = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: "EditorControllerID") as? EditorController {
                 presented.page = self.pages[indexPath.row]
-                presented.token = AccountManager.shared.current?.accessToken
-                presented.readonly = false
+                presented.token = ProfileManager.shared.current?.accessToken
+                // presented.readonly = false
                 presented.modalPresentationStyle = .fullScreen
                 self.present(presented, animated: true)
             }
@@ -149,15 +149,14 @@ class PageManagerController: UIViewController, UITableViewDelegate, UITableViewD
     /// Creates a new page.
     /// - parameter textField: user entered text field.
     func createPage(_ textField: UITextField?) {
-        guard let account = AccountManager.shared.current,
-              let token = account.accessToken,
+        guard let profile = ProfileManager.shared.current,
               let title = textField?.text else {
             return
         }
 
         let node = Telegraph.Node(textNode: "Untitled", object: nil)
-        let method = Telegraph.Method.createPage(accessToken: token, title: title, authorName: account.authorName,
-            authorUrl: account.authorUrl, content: [node], returnContent: true)
+        let method = Telegraph.Method.createPage(accessToken: profile.accessToken, title: title, authorName: profile.authorName,
+            authorUrl: profile.authorUrl, content: [node], returnContent: true)
 
         try? Telegraph.query(method: method, completion: { (response: Telegraph.Response<Telegraph.Page>) in
             if response.ok, let page = response.result {
@@ -167,8 +166,8 @@ class PageManagerController: UIViewController, UITableViewDelegate, UITableViewD
                 let presented = UIStoryboard(name: "Main", bundle: nil)
                     .instantiateViewController(withIdentifier: "EditorControllerID") as? EditorController
                 presented?.page = page
-                presented?.token = AccountManager.shared.current?.accessToken
-                presented?.readonly = false
+                presented?.token = ProfileManager.shared.current?.accessToken
+                // presented?.readonly = false
                 presented?.modalPresentationStyle = .fullScreen
                 self.present(presented!, animated: true)
             } else {

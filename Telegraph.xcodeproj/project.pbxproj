@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		334BB0A827B87A0000F486DE /* PageManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334BB0A727B87A0000F486DE /* PageManagerCell.swift */; };
+		3356819E27F7D2DC007B6535 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3356819D27F7D2DC007B6535 /* Profile.swift */; };
 		335AD5AC27A9E974003655D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335AD5AB27A9E974003655D7 /* AppDelegate.swift */; };
 		335AD5AE27A9E974003655D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335AD5AD27A9E974003655D7 /* SceneDelegate.swift */; };
 		335AD5B027A9E974003655D7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335AD5AF27A9E974003655D7 /* LoginController.swift */; };
@@ -16,19 +17,34 @@
 		335AD5B827A9E976003655D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335AD5B627A9E976003655D7 /* LaunchScreen.storyboard */; };
 		335AD5C527A9EB68003655D7 /* Telegraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335AD5C427A9EB68003655D7 /* Telegraph.swift */; };
 		335F296627D94233002C8CAF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 335F296527D94233002C8CAF /* .swiftlint.yml */; };
-		3365AAF127B560C600B7FF73 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365AAF027B560C600B7FF73 /* AccountManager.swift */; };
-		3365AAF327B5639100B7FF73 /* AccountManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365AAF227B5639100B7FF73 /* AccountManagerController.swift */; };
-		3365AAF527B56FBD00B7FF73 /* AccountManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365AAF427B56FBD00B7FF73 /* AccountManagerCell.swift */; };
+		3365AAF127B560C600B7FF73 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365AAF027B560C600B7FF73 /* ProfileManager.swift */; };
+		3365AAF327B5639100B7FF73 /* ProfileManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365AAF227B5639100B7FF73 /* ProfileManagerController.swift */; };
+		3365AAF527B56FBD00B7FF73 /* ProfileManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3365AAF427B56FBD00B7FF73 /* ProfileManagerCell.swift */; };
 		3372F93327C2F96E0075163F /* Keyсhain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3372F93227C2F96E0075163F /* Keyсhain.swift */; };
 		3372F93927C312B60075163F /* Telegraph.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3372F93727C312B60075163F /* Telegraph.xcdatamodeld */; };
 		3372F94027C316EB0075163F /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3372F93F27C316EB0075163F /* CoreData.swift */; };
 		33802A5C27B7EB4E005BF5BF /* PageManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33802A5B27B7EB4E005BF5BF /* PageManagerController.swift */; };
-		338AEA0627B741B8005DC28A /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338AEA0527B741B8005DC28A /* AccountInfoController.swift */; };
+		338AEA0627B741B8005DC28A /* ProfileInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338AEA0527B741B8005DC28A /* ProfileInfoController.swift */; };
 		338B28BF27D01D99001757F7 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338B28BE27D01D99001757F7 /* EditorController.swift */; };
+		33988B752895FEAE007AE3E3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 33988B742895FEAE007AE3E3 /* LICENSE */; };
+		33EA495627F6332D001DDC28 /* TelegraphAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA495527F6332D001DDC28 /* TelegraphAPITests.swift */; };
+		33EA496227F65044001DDC28 /* PersistanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA496127F65044001DDC28 /* PersistanceTests.swift */; };
+		33EA496427F66878001DDC28 /* AccountManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA496327F66878001DDC28 /* AccountManagerTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33EA495727F6332D001DDC28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 335AD5A027A9E974003655D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 335AD5A727A9E974003655D7;
+			remoteInfo = Telegraph;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		334BB0A727B87A0000F486DE /* PageManagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManagerCell.swift; sourceTree = "<group>"; };
+		3356819D27F7D2DC007B6535 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		335AD5A827A9E974003655D7 /* Telegraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telegraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		335AD5AB27A9E974003655D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		335AD5AD27A9E974003655D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,20 +55,32 @@
 		335AD5B927A9E976003655D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		335AD5C427A9EB68003655D7 /* Telegraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telegraph.swift; sourceTree = "<group>"; };
 		335F296527D94233002C8CAF /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		3365AAF027B560C600B7FF73 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
-		3365AAF227B5639100B7FF73 /* AccountManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerController.swift; sourceTree = "<group>"; };
-		3365AAF427B56FBD00B7FF73 /* AccountManagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerCell.swift; sourceTree = "<group>"; };
+		3365AAF027B560C600B7FF73 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		3365AAF227B5639100B7FF73 /* ProfileManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManagerController.swift; sourceTree = "<group>"; };
+		3365AAF427B56FBD00B7FF73 /* ProfileManagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManagerCell.swift; sourceTree = "<group>"; };
 		3372F93227C2F96E0075163F /* Keyсhain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyсhain.swift"; sourceTree = "<group>"; };
 		3372F93827C312B60075163F /* Telegraph.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Telegraph.xcdatamodel; sourceTree = "<group>"; };
 		3372F93F27C316EB0075163F /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		33802A5B27B7EB4E005BF5BF /* PageManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManagerController.swift; sourceTree = "<group>"; };
-		338AEA0527B741B8005DC28A /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
+		338AEA0527B741B8005DC28A /* ProfileInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoController.swift; sourceTree = "<group>"; };
 		338B28BE27D01D99001757F7 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
+		33988B742895FEAE007AE3E3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		33AA4AE627DA142600A87E55 /* README.MD */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
+		33EA495327F6332D001DDC28 /* TelegraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelegraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33EA495527F6332D001DDC28 /* TelegraphAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegraphAPITests.swift; sourceTree = "<group>"; };
+		33EA496127F65044001DDC28 /* PersistanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceTests.swift; sourceTree = "<group>"; };
+		33EA496327F66878001DDC28 /* AccountManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		335AD5A527A9E974003655D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33EA495027F6332D001DDC28 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -67,7 +95,9 @@
 			children = (
 				335AD5AA27A9E974003655D7 /* Telegraph */,
 				33AA4AE627DA142600A87E55 /* README.MD */,
+				33988B742895FEAE007AE3E3 /* LICENSE */,
 				335F296527D94233002C8CAF /* .swiftlint.yml */,
+				33EA495427F6332D001DDC28 /* TelegraphTests */,
 				335AD5A927A9E974003655D7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				335AD5A827A9E974003655D7 /* Telegraph.app */,
+				33EA495327F6332D001DDC28 /* TelegraphTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,7 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				335AD5C427A9EB68003655D7 /* Telegraph.swift */,
-				3365AAF027B560C600B7FF73 /* AccountManager.swift */,
+				3365AAF027B560C600B7FF73 /* ProfileManager.swift */,
+				3356819D27F7D2DC007B6535 /* Profile.swift */,
 				3372F93E27C314510075163F /* Persistence */,
 			);
 			path = Model;
@@ -110,7 +142,7 @@
 		335AD5C027A9E98B003655D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3365AAF427B56FBD00B7FF73 /* AccountManagerCell.swift */,
+				3365AAF427B56FBD00B7FF73 /* ProfileManagerCell.swift */,
 				334BB0A727B87A0000F486DE /* PageManagerCell.swift */,
 			);
 			path = View;
@@ -119,8 +151,8 @@
 		335AD5C127A9E991003655D7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3365AAF227B5639100B7FF73 /* AccountManagerController.swift */,
-				338AEA0527B741B8005DC28A /* AccountInfoController.swift */,
+				3365AAF227B5639100B7FF73 /* ProfileManagerController.swift */,
+				338AEA0527B741B8005DC28A /* ProfileInfoController.swift */,
 				335AD5AF27A9E974003655D7 /* LoginController.swift */,
 				33802A5B27B7EB4E005BF5BF /* PageManagerController.swift */,
 				338B28BE27D01D99001757F7 /* EditorController.swift */,
@@ -135,6 +167,16 @@
 				3372F93F27C316EB0075163F /* CoreData.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		33EA495427F6332D001DDC28 /* TelegraphTests */ = {
+			isa = PBXGroup;
+			children = (
+				33EA495527F6332D001DDC28 /* TelegraphAPITests.swift */,
+				33EA496127F65044001DDC28 /* PersistanceTests.swift */,
+				33EA496327F66878001DDC28 /* AccountManagerTests.swift */,
+			);
+			path = TelegraphTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +200,24 @@
 			productReference = 335AD5A827A9E974003655D7 /* Telegraph.app */;
 			productType = "com.apple.product-type.application";
 		};
+		33EA495227F6332D001DDC28 /* TelegraphTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33EA495B27F6332D001DDC28 /* Build configuration list for PBXNativeTarget "TelegraphTests" */;
+			buildPhases = (
+				33EA494F27F6332D001DDC28 /* Sources */,
+				33EA495027F6332D001DDC28 /* Frameworks */,
+				33EA495127F6332D001DDC28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33EA495827F6332D001DDC28 /* PBXTargetDependency */,
+			);
+			name = TelegraphTests;
+			productName = TelegraphTests;
+			productReference = 33EA495327F6332D001DDC28 /* TelegraphTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,11 +225,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					335AD5A727A9E974003655D7 = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					33EA495227F6332D001DDC28 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 335AD5A727A9E974003655D7;
 					};
 				};
 			};
@@ -187,6 +251,7 @@
 			projectRoot = "";
 			targets = (
 				335AD5A727A9E974003655D7 /* Telegraph */,
+				33EA495227F6332D001DDC28 /* TelegraphTests */,
 			);
 		};
 /* End PBXProject section */
@@ -200,6 +265,14 @@
 				335AD5B827A9E976003655D7 /* LaunchScreen.storyboard in Resources */,
 				335AD5B527A9E976003655D7 /* Assets.xcassets in Resources */,
 				335AD5B327A9E974003655D7 /* Main.storyboard in Resources */,
+				33988B752895FEAE007AE3E3 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33EA495127F6332D001DDC28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,14 +305,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				33802A5C27B7EB4E005BF5BF /* PageManagerController.swift in Sources */,
-				3365AAF127B560C600B7FF73 /* AccountManager.swift in Sources */,
+				3356819E27F7D2DC007B6535 /* Profile.swift in Sources */,
+				3365AAF127B560C600B7FF73 /* ProfileManager.swift in Sources */,
 				335AD5B027A9E974003655D7 /* LoginController.swift in Sources */,
 				3372F94027C316EB0075163F /* CoreData.swift in Sources */,
 				335AD5AC27A9E974003655D7 /* AppDelegate.swift in Sources */,
 				334BB0A827B87A0000F486DE /* PageManagerCell.swift in Sources */,
-				338AEA0627B741B8005DC28A /* AccountInfoController.swift in Sources */,
-				3365AAF327B5639100B7FF73 /* AccountManagerController.swift in Sources */,
-				3365AAF527B56FBD00B7FF73 /* AccountManagerCell.swift in Sources */,
+				338AEA0627B741B8005DC28A /* ProfileInfoController.swift in Sources */,
+				3365AAF327B5639100B7FF73 /* ProfileManagerController.swift in Sources */,
+				3365AAF527B56FBD00B7FF73 /* ProfileManagerCell.swift in Sources */,
 				3372F93327C2F96E0075163F /* Keyсhain.swift in Sources */,
 				338B28BF27D01D99001757F7 /* EditorController.swift in Sources */,
 				335AD5C527A9EB68003655D7 /* Telegraph.swift in Sources */,
@@ -248,7 +322,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33EA494F27F6332D001DDC28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33EA495627F6332D001DDC28 /* TelegraphAPITests.swift in Sources */,
+				33EA496227F65044001DDC28 /* PersistanceTests.swift in Sources */,
+				33EA496427F66878001DDC28 /* AccountManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33EA495827F6332D001DDC28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 335AD5A727A9E974003655D7 /* Telegraph */;
+			targetProxy = 33EA495727F6332D001DDC28 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		335AD5B127A9E974003655D7 /* Main.storyboard */ = {
@@ -444,6 +536,44 @@
 			};
 			name = Release;
 		};
+		33EA495927F6332D001DDC28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6HHBUW4D9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.h1yoke.TelegraphTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Telegraph.app/Telegraph";
+			};
+			name = Debug;
+		};
+		33EA495A27F6332D001DDC28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6HHBUW4D9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.h1yoke.TelegraphTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Telegraph.app/Telegraph";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -461,6 +591,15 @@
 			buildConfigurations = (
 				335AD5BD27A9E976003655D7 /* Debug */,
 				335AD5BE27A9E976003655D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33EA495B27F6332D001DDC28 /* Build configuration list for PBXNativeTarget "TelegraphTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33EA495927F6332D001DDC28 /* Debug */,
+				33EA495A27F6332D001DDC28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

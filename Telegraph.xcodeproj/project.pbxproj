@@ -27,12 +27,28 @@
 		338AEA0627B741B8005DC28A /* ProfileInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338AEA0527B741B8005DC28A /* ProfileInfoController.swift */; };
 		338B28BF27D01D99001757F7 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338B28BE27D01D99001757F7 /* EditorController.swift */; };
 		33988B752895FEAE007AE3E3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 33988B742895FEAE007AE3E3 /* LICENSE */; };
+		33BD2F4D289690BE00BBE20C /* RichEditorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BD2F472896909E00BBE20C /* RichEditorView.framework */; };
+		33BD2F4E289690BE00BBE20C /* RichEditorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33BD2F472896909E00BBE20C /* RichEditorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33EA495627F6332D001DDC28 /* TelegraphAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA495527F6332D001DDC28 /* TelegraphAPITests.swift */; };
 		33EA496227F65044001DDC28 /* PersistanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA496127F65044001DDC28 /* PersistanceTests.swift */; };
 		33EA496427F66878001DDC28 /* AccountManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA496327F66878001DDC28 /* AccountManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		33BD2F462896909E00BBE20C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33BD2F412896909E00BBE20C /* RichEditorView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FBA6AAF91AD3EC9F00721644;
+			remoteInfo = RichEditorView;
+		};
+		33BD2F482896909E00BBE20C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33BD2F412896909E00BBE20C /* RichEditorView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FBA6AB041AD3EC9F00721644;
+			remoteInfo = RichEditorViewTests;
+		};
 		33EA495727F6332D001DDC28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 335AD5A027A9E974003655D7 /* Project object */;
@@ -42,10 +58,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		33A5D42C28968BB300F14B8F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				33BD2F4E289690BE00BBE20C /* RichEditorView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		334BB0A727B87A0000F486DE /* PageManagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManagerCell.swift; sourceTree = "<group>"; };
 		3356819D27F7D2DC007B6535 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		335AD5A827A9E974003655D7 /* Telegraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telegraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		335AD5AB27A9E974003655D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		335AD5AD27A9E974003655D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		335AD5AF27A9E974003655D7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -61,12 +90,14 @@
 		3372F93227C2F96E0075163F /* Keyсhain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyсhain.swift"; sourceTree = "<group>"; };
 		3372F93827C312B60075163F /* Telegraph.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Telegraph.xcdatamodel; sourceTree = "<group>"; };
 		3372F93F27C316EB0075163F /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		3378B58B2898538B00D227E9 /* Telegraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Telegraph.app; path = "/Users/shade/Documents/Code/etc/Telegraph/build/Debug-iphoneos/Telegraph.app"; sourceTree = "<absolute>"; };
+		3378B58C2898538B00D227E9 /* TelegraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TelegraphTests.xctest; path = "/Users/shade/Documents/Code/etc/Telegraph/build/Debug-iphoneos/TelegraphTests.xctest"; sourceTree = "<absolute>"; };
 		33802A5B27B7EB4E005BF5BF /* PageManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManagerController.swift; sourceTree = "<group>"; };
 		338AEA0527B741B8005DC28A /* ProfileInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoController.swift; sourceTree = "<group>"; };
 		338B28BE27D01D99001757F7 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
 		33988B742895FEAE007AE3E3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		33AA4AE627DA142600A87E55 /* README.MD */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
-		33EA495327F6332D001DDC28 /* TelegraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelegraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33BD2F412896909E00BBE20C /* RichEditorView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RichEditorView.xcodeproj; path = RichEditorView/RichEditorView.xcodeproj; sourceTree = "<group>"; };
 		33EA495527F6332D001DDC28 /* TelegraphAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegraphAPITests.swift; sourceTree = "<group>"; };
 		33EA496127F65044001DDC28 /* PersistanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceTests.swift; sourceTree = "<group>"; };
 		33EA496327F66878001DDC28 /* AccountManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerTests.swift; sourceTree = "<group>"; };
@@ -77,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33BD2F4D289690BE00BBE20C /* RichEditorView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,18 +129,9 @@
 				33AA4AE627DA142600A87E55 /* README.MD */,
 				33988B742895FEAE007AE3E3 /* LICENSE */,
 				335F296527D94233002C8CAF /* .swiftlint.yml */,
+				33BD2F412896909E00BBE20C /* RichEditorView.xcodeproj */,
 				33EA495427F6332D001DDC28 /* TelegraphTests */,
-				335AD5A927A9E974003655D7 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		335AD5A927A9E974003655D7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				335AD5A827A9E974003655D7 /* Telegraph.app */,
-				33EA495327F6332D001DDC28 /* TelegraphTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		335AD5AA27A9E974003655D7 /* Telegraph */ = {
@@ -169,6 +192,15 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		33BD2F422896909E00BBE20C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33BD2F472896909E00BBE20C /* RichEditorView.framework */,
+				33BD2F492896909E00BBE20C /* RichEditorViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		33EA495427F6332D001DDC28 /* TelegraphTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +222,7 @@
 				335AD5A527A9E974003655D7 /* Frameworks */,
 				335AD5A627A9E974003655D7 /* Resources */,
 				335F296227D93F8D002C8CAF /* Linter */,
+				33A5D42C28968BB300F14B8F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,7 +230,7 @@
 			);
 			name = Telegraph;
 			productName = Telegraph;
-			productReference = 335AD5A827A9E974003655D7 /* Telegraph.app */;
+			productReference = 3378B58B2898538B00D227E9 /* Telegraph.app */;
 			productType = "com.apple.product-type.application";
 		};
 		33EA495227F6332D001DDC28 /* TelegraphTests */ = {
@@ -215,7 +248,7 @@
 			);
 			name = TelegraphTests;
 			productName = TelegraphTests;
-			productReference = 33EA495327F6332D001DDC28 /* TelegraphTests.xctest */;
+			productReference = 3378B58C2898538B00D227E9 /* TelegraphTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -246,8 +279,14 @@
 				Base,
 			);
 			mainGroup = 335AD59F27A9E974003655D7;
-			productRefGroup = 335AD5A927A9E974003655D7 /* Products */;
+			productRefGroup = 335AD59F27A9E974003655D7;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 33BD2F422896909E00BBE20C /* Products */;
+					ProjectRef = 33BD2F412896909E00BBE20C /* RichEditorView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				335AD5A727A9E974003655D7 /* Telegraph */,
@@ -255,6 +294,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		33BD2F472896909E00BBE20C /* RichEditorView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RichEditorView.framework;
+			remoteRef = 33BD2F462896909E00BBE20C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33BD2F492896909E00BBE20C /* RichEditorViewTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RichEditorViewTests.xctest;
+			remoteRef = 33BD2F482896909E00BBE20C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		335AD5A627A9E974003655D7 /* Resources */ = {

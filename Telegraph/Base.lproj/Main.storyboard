@@ -205,9 +205,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="profileTableView" destination="mvm-eG-FxT" id="4M9-tX-tcO"/>
                         <outlet property="addButton" destination="wWl-9p-120" id="YEm-ka-1Rp"/>
                         <outlet property="loadingIndicator" destination="kN4-cY-T2L" id="NEY-Fo-Vvs"/>
+                        <outlet property="profileTableView" destination="mvm-eG-FxT" id="4M9-tX-tcO"/>
                         <outlet property="searchBar" destination="w1n-yy-Mmv" id="Dyx-xb-sh0"/>
                     </connections>
                 </viewController>
@@ -350,10 +350,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="profileImage" destination="oID-U2-Mbq" id="nwN-dL-m1Y"/>
                         <outlet property="authorNameField" destination="pvJ-NP-TQ7" id="6bI-UP-ec3"/>
                         <outlet property="authorUrlField" destination="7Ki-Gq-eNh" id="86D-zO-2u4"/>
                         <outlet property="barTitle" destination="biv-se-moR" id="AlH-na-L2P"/>
+                        <outlet property="profileImage" destination="oID-U2-Mbq" id="nwN-dL-m1Y"/>
                         <outlet property="shortNameField" destination="UO4-dD-nIc" id="cTe-SR-BoO"/>
                         <outlet property="tokenField" destination="Jmh-fA-DMA" id="Yyy-5o-Ikg"/>
                     </connections>
@@ -505,32 +505,30 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDz-3Z-15C">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVM-pC-GbJ">
                                 <rect key="frame" x="0.0" y="113" width="414" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bjb-90-99t"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hDz-3Z-15C" firstAttribute="bottom" secondItem="Bjb-90-99t" secondAttribute="bottom" id="4eZ-ad-UkM"/>
-                            <constraint firstItem="hDz-3Z-15C" firstAttribute="leading" secondItem="Bjb-90-99t" secondAttribute="leading" id="61W-q7-05c"/>
-                            <constraint firstItem="t1K-TM-x6b" firstAttribute="trailing" secondItem="Bjb-90-99t" secondAttribute="trailing" id="GJ6-GE-jWp"/>
-                            <constraint firstAttribute="trailing" secondItem="hDz-3Z-15C" secondAttribute="trailing" id="R0J-5f-TdC"/>
-                            <constraint firstItem="hDz-3Z-15C" firstAttribute="top" secondItem="t1K-TM-x6b" secondAttribute="bottom" constant="25" id="lpD-M1-ApR"/>
-                            <constraint firstItem="t1K-TM-x6b" firstAttribute="leading" secondItem="Bjb-90-99t" secondAttribute="leading" id="nKg-su-y9U"/>
-                            <constraint firstItem="t1K-TM-x6b" firstAttribute="top" secondItem="Bjb-90-99t" secondAttribute="top" id="pvS-Dp-RvU"/>
+                            <constraint firstItem="t1K-TM-x6b" firstAttribute="trailing" secondItem="Bjb-90-99t" secondAttribute="trailing" priority="999" id="GJ6-GE-jWp"/>
+                            <constraint firstItem="GVM-pC-GbJ" firstAttribute="leading" secondItem="Bjb-90-99t" secondAttribute="leading" priority="999" id="KTQ-O4-YFe"/>
+                            <constraint firstItem="GVM-pC-GbJ" firstAttribute="trailing" secondItem="Bjb-90-99t" secondAttribute="trailing" priority="999" id="Z8l-8J-Qcf"/>
+                            <constraint firstItem="GVM-pC-GbJ" firstAttribute="top" secondItem="t1K-TM-x6b" secondAttribute="bottom" priority="999" constant="25" id="ZbA-rp-vs5"/>
+                            <constraint firstItem="t1K-TM-x6b" firstAttribute="leading" secondItem="Bjb-90-99t" secondAttribute="leading" priority="999" id="nKg-su-y9U"/>
+                            <constraint firstItem="t1K-TM-x6b" firstAttribute="top" secondItem="Bjb-90-99t" secondAttribute="top" priority="999" id="pvS-Dp-RvU"/>
+                            <constraint firstItem="GVM-pC-GbJ" firstAttribute="bottom" secondItem="Bjb-90-99t" secondAttribute="bottom" priority="999" id="rN1-bQ-QSQ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="editorController" destination="hDz-3Z-15C" id="ePw-c9-pLP"/>
+                        <outlet property="editorView" destination="GVM-pC-GbJ" id="iNF-GT-RSf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKF-Hd-cbC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2613" y="851"/>
+            <point key="canvasLocation" x="2611.594202898551" y="850.44642857142856"/>
         </scene>
     </scenes>
     <resources>

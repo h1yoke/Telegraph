@@ -1,9 +1,12 @@
 import UIKit
+import RichEditorView
 
 /// Page editor controller. Contains editor text field and buttons.
-class EditorController: UIViewController {
+class EditorController: UIViewController, RichEditorToolbarDelegate {
     /// Text editor
-    @IBOutlet weak var editorController: UITextView!
+    @IBOutlet weak var editorView: UIView!
+    var editor: RichEditorView!
+    var toolbar: RichEditorToolbar!
 
     /// Account token
     var token: String!
@@ -12,18 +15,23 @@ class EditorController: UIViewController {
 
     /// Loades page content.
     func loadPage() {
+        editor = RichEditorView(frame: editorView.bounds)
+        editorView.addSubview(editor)
+
+        toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 44))
+        toolbar.options = RichEditorDefaultOption.all
+        toolbar.editor = editor
+        editor.inputAccessoryView = toolbar
+
         if page.content == nil {
             let method = Telegraph.Method.getPage(path: page.path, returnContent: true)
             try? Telegraph.query(method: method, completion: { (response: Telegraph.Response<Telegraph.Page>) in
                 if let result = response.result {
-                    self.editorController.text = result.content?.reduce(into: "", { (partialResult: inout String, next: Telegraph.Node) in
+                    let html = result.content?.reduce(into: "", { (partialResult: inout String, next: Telegraph.Node) in
                         partialResult += next.flatUnwrap()
                     })
+                    self.editor.html = html ?? ""
                 }
-            })
-        } else {
-            editorController.text = page.content!.reduce(into: "", { (partialResult: inout String, next: Telegraph.Node) in
-                partialResult += next.flatUnwrap()
             })
         }
     }
@@ -35,32 +43,8 @@ class EditorController: UIViewController {
 
         loadPage()
         if !(page.canEdit ?? false) {
-            editorController.isEditable = false
-        } else {
-            let notificationCenter = NotificationCenter.default
-            notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard),
-                                           name: UIResponder.keyboardWillHideNotification, object: nil)
-            notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard),
-                                           name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+            editor.isEditingEnabled = false
         }
-    }
-
-    @objc func adjustForKeyboard(notification: Notification) {
-        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-
-        let keyboardScreenEndFrame = keyboardValue.cgRectValue
-        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-
-        if notification.name == UIResponder.keyboardWillHideNotification {
-            editorController.contentInset = .zero
-        } else {
-            editorController.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
-        }
-
-        editorController.scrollIndicatorInsets = editorController.contentInset
-
-        let selectedRange = editorController.selectedRange
-        editorController.scrollRangeToVisible(selectedRange)
     }
 
     /// Prompts if page need to be saved and exits editor.
@@ -69,7 +53,7 @@ class EditorController: UIViewController {
         let alert = UIAlertController(title: "Warning", message: "You are about to leave edited page. Save changes?", preferredStyle: .alert)
 
         let actions = [UIAlertAction(title: "Save", style: .default, handler: { _ in
-            self.page.content = [Telegraph.Node(textNode: self.editorController.text, object: nil)]
+            self.page.content = [Telegraph.Node(textNode: self.editor.html, object: nil)]
 
             let method = Telegraph.Method.editPage(accessToken: self.token, path: self.page.path, title: self.page.title, content: self.page.content!)
 

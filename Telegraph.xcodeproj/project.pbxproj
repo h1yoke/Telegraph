@@ -31,7 +31,7 @@
 		33BD2F4E289690BE00BBE20C /* RichEditorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33BD2F472896909E00BBE20C /* RichEditorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33EA495627F6332D001DDC28 /* TelegraphAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA495527F6332D001DDC28 /* TelegraphAPITests.swift */; };
 		33EA496227F65044001DDC28 /* PersistanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA496127F65044001DDC28 /* PersistanceTests.swift */; };
-		33EA496427F66878001DDC28 /* AccountManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA496327F66878001DDC28 /* AccountManagerTests.swift */; };
+		33EA496427F66878001DDC28 /* ProfileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EA496327F66878001DDC28 /* ProfileManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,8 +90,8 @@
 		3372F93227C2F96E0075163F /* Keyсhain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyсhain.swift"; sourceTree = "<group>"; };
 		3372F93827C312B60075163F /* Telegraph.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Telegraph.xcdatamodel; sourceTree = "<group>"; };
 		3372F93F27C316EB0075163F /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
-		3378B58B2898538B00D227E9 /* Telegraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Telegraph.app; path = "/Users/shade/Documents/Code/etc/Telegraph/build/Debug-iphoneos/Telegraph.app"; sourceTree = "<absolute>"; };
-		3378B58C2898538B00D227E9 /* TelegraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TelegraphTests.xctest; path = "/Users/shade/Documents/Code/etc/Telegraph/build/Debug-iphoneos/TelegraphTests.xctest"; sourceTree = "<absolute>"; };
+		337E1AFD289F35620085E259 /* Telegraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telegraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		337E1AFE289F35620085E259 /* TelegraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TelegraphTests.xctest; path = "/Users/shade/Documents/Code/etc/Telegraph/build/Debug-iphoneos/TelegraphTests.xctest"; sourceTree = "<absolute>"; };
 		33802A5B27B7EB4E005BF5BF /* PageManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManagerController.swift; sourceTree = "<group>"; };
 		338AEA0527B741B8005DC28A /* ProfileInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoController.swift; sourceTree = "<group>"; };
 		338B28BE27D01D99001757F7 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		33BD2F412896909E00BBE20C /* RichEditorView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RichEditorView.xcodeproj; path = RichEditorView/RichEditorView.xcodeproj; sourceTree = "<group>"; };
 		33EA495527F6332D001DDC28 /* TelegraphAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegraphAPITests.swift; sourceTree = "<group>"; };
 		33EA496127F65044001DDC28 /* PersistanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceTests.swift; sourceTree = "<group>"; };
-		33EA496327F66878001DDC28 /* AccountManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerTests.swift; sourceTree = "<group>"; };
+		33EA496327F66878001DDC28 /* ProfileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +131,7 @@
 				335F296527D94233002C8CAF /* .swiftlint.yml */,
 				33BD2F412896909E00BBE20C /* RichEditorView.xcodeproj */,
 				33EA495427F6332D001DDC28 /* TelegraphTests */,
+				337E1AFD289F35620085E259 /* Telegraph.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,8 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				33EA495527F6332D001DDC28 /* TelegraphAPITests.swift */,
+				33EA496327F66878001DDC28 /* ProfileManagerTests.swift */,
 				33EA496127F65044001DDC28 /* PersistanceTests.swift */,
-				33EA496327F66878001DDC28 /* AccountManagerTests.swift */,
 			);
 			path = TelegraphTests;
 			sourceTree = "<group>";
@@ -230,7 +231,7 @@
 			);
 			name = Telegraph;
 			productName = Telegraph;
-			productReference = 3378B58B2898538B00D227E9 /* Telegraph.app */;
+			productReference = 337E1AFD289F35620085E259 /* Telegraph.app */;
 			productType = "com.apple.product-type.application";
 		};
 		33EA495227F6332D001DDC28 /* TelegraphTests */ = {
@@ -248,7 +249,7 @@
 			);
 			name = TelegraphTests;
 			productName = TelegraphTests;
-			productReference = 3378B58C2898538B00D227E9 /* TelegraphTests.xctest */;
+			productReference = 337E1AFE289F35620085E259 /* TelegraphTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -337,6 +338,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		335F296227D93F8D002C8CAF /* Linter */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -384,7 +386,7 @@
 			files = (
 				33EA495627F6332D001DDC28 /* TelegraphAPITests.swift in Sources */,
 				33EA496227F65044001DDC28 /* PersistanceTests.swift in Sources */,
-				33EA496427F66878001DDC28 /* AccountManagerTests.swift in Sources */,
+				33EA496427F66878001DDC28 /* ProfileManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,12 +546,13 @@
 				DEVELOPMENT_TEAM = W6HHBUW4D9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Telegraph/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Telegraph requires photo library access to set profile pictures.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -573,12 +576,13 @@
 				DEVELOPMENT_TEAM = W6HHBUW4D9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Telegraph/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Telegraph requires photo library access to set profile pictures.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

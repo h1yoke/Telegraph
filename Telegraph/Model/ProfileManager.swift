@@ -35,8 +35,14 @@ class ProfileManager {
             return nil
         }
         set {
+            // swaps current profile, or creates first one
             if let newValue = newValue {
-                profiles[currentId] = newValue
+                if currentId == -1 {
+                    profiles.append(newValue)
+                    currentId = 0
+                } else {
+                    profiles[currentId] = newValue
+                }
             }
         }
     }
@@ -76,6 +82,7 @@ class ProfileManager {
     /// - returns: `true` if success, `false` othrewise.
     @discardableResult
     func edit(id: Int, newProfile: Profile) -> Bool {
+        /// TODO: update other things
         profiles[id].updateToken(token: newProfile.accessToken)
         return true
     }

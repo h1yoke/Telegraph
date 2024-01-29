@@ -1,9 +1,28 @@
 import XCTest
 @testable import Telegraph
 
+// Dummy profile initializer for testing purposes
+fileprivate extension Profile {
+    convenience init?() {
+        self.init(newAccount: Telegraph.Account(accessToken: ""))
+    }
+}
+
+fileprivate extension String {
+    static func random(length: Int) -> String {
+        enum Statics {
+            static let scalars = [UnicodeScalar("a").value...UnicodeScalar("z").value,
+                                  UnicodeScalar("A").value...UnicodeScalar("Z").value,
+                                  UnicodeScalar("0").value...UnicodeScalar("9").value].joined()
+            static let characters = scalars.map { Character(UnicodeScalar($0)!) }
+        }
+        return String((0..<length).map { _ in Statics.characters.randomElement()! })
+    }
+}
+
 class PersistanceTests: XCTestCase {
     var keychainData: [String: String]!
-    var coreData: [UUID: Telegraph.Account]!
+    var coreData: [UUID: Profile]!
 
     private func setupKeychain(size: Int, length: Int) {
         keychainData = [:]
@@ -15,7 +34,7 @@ class PersistanceTests: XCTestCase {
     private func setupCoreData(size: Int) {
         coreData = [:]
         for _ in 0..<size {
-            coreData[UUID()] = Telegraph.Account.random()
+            coreData[UUID()] = Profile()
         }
     }
 
@@ -48,7 +67,7 @@ class PersistanceTests: XCTestCase {
         setupCoreData(size: 1_000)
 
         coreData.forEach {
-            XCTAssert(CoreData.save(uuid: $0.key, account: $0.value), "Pair \($0) can't be added")
+            XCTAssert(CoreData.save(uuid: $0.key, profile: $0.value), "Pair \($0) can't be added")
         }
 
         XCTAssert(CoreData.fetch().count >= 1_000, "Data is not saved")
@@ -56,42 +75,5 @@ class PersistanceTests: XCTestCase {
         coreData.forEach {
             XCTAssert(CoreData.delete(uuid: $0.key), "Pair \($0) can't be deleted")
         }
-    }
-}
-
-extension String {
-    static func random(length: Int) -> String {
-        enum Statics {
-            static let scalars = [UnicodeScalar("a").value...UnicodeScalar("z").value,
-                                  UnicodeScalar("A").value...UnicodeScalar("Z").value,
-                                  UnicodeScalar("0").value...UnicodeScalar("9").value].joined()
-
-            static let characters = scalars.map { Character(UnicodeScalar($0)!) }
-        }
-
-        let result = (0..<length).map { _ in Statics.characters.randomElement()! }
-        return String(result)
-    }
-}
-
-extension Telegraph.Account: Equatable {
-    public static func == (lhs: Telegraph.Account, rhs: Telegraph.Account) -> Bool {
-        return lhs.accessToken == rhs.accessToken &&
-               lhs.authUrl == rhs.authUrl &&
-               lhs.authorName == rhs.authorName &&
-               lhs.authorUrl == rhs.authorUrl &&
-               lhs.pageCount == rhs.pageCount &&
-               lhs.shortName == rhs.shortName
-    }
-
-    static func random() -> Telegraph.Account {
-        return Telegraph.Account(
-            shortName: String.random(length: 50),
-            authorName: String.random(length: 50),
-            authorUrl: String.random(length: 50),
-            accessToken: String.random(length: 50),
-            authUrl: String.random(length: 50),
-            pageCount: Int.random(in: 0..<Int.max)
-        )
     }
 }
